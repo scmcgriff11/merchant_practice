@@ -17,6 +17,9 @@ gem 'devise'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'thin'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
