@@ -3,6 +3,9 @@ require 'test_helper'
 class BrandsControllerTest < ActionController::TestCase
   setup do
     @brand = brands(:one)
+    @new_brand = {name: 'new_brand'}
+    @update_brand = {name: 'update_brand'}
+    
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class BrandsControllerTest < ActionController::TestCase
 
   test "should create brand" do
     assert_difference('Brand.count') do
-      post :create, brand: {  }
+    post :create, brand: @new_brand
     end
 
     assert_redirected_to brand_path(assigns(:brand))
@@ -35,7 +38,7 @@ class BrandsControllerTest < ActionController::TestCase
   end
 
   test "should update brand" do
-    patch :update, id: @brand, brand: {  }
+    patch :update, id: @brand, brand: @update_brand
     assert_redirected_to brand_path(assigns(:brand))
   end
 

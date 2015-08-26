@@ -17,14 +17,15 @@ class ProductTest < ActiveSupport::TestCase
   end
   
   test "product price must be positive and greater than zero" do
-    product = Product.new(name: "my product", description: "my description", category_id: 1, brand_id: 1, quantity: 1)
-    product.price = 0
-    assert product.invalid?, "invalid product"
-    assert_equal ['must be greater than or equal to 0.01'], product.errors[:price]
+       product = Product.new(name: "my product", description: "my description", category_id: 1, brand_id: 1, quantity: 1)
 
-    product.price = 1
-    assert product.valid?, "product was invalid when given valid price"
- end
+        product.price = 0
+        assert product.invalid?, "invalid product"
+        assert_equal ['must be greater than or equal to 0.01'], product.errors[:price]
+            
+        product.price = 1
+        assert product.valid?, "product was invalid when given valid price"
+  end
  
   test "product saves with all valid attributes" do 
     product = Product.new(name: "my product", description: "my description", category_id: 1, brand_id: 1, quantity: 1, price: 1)
