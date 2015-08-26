@@ -18,8 +18,8 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.category %></td>
-        <td><%= product.brand %></td>
+        <td><%= product.try(:category).try(:name) %></td>
+        <td><%= product.try(:brand).try(:name) %></td>
         <td><%= product.description %></td>
         <td><%= number_to_currency product.price %></td>
         <td><%= product.quantity %></td>
