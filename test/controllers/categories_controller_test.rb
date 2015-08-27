@@ -3,10 +3,9 @@ require 'test_helper'
 class CategoriesControllerTest < ActionController::TestCase
   setup do
     @category = categories(:one)
-    @new_category = { name: 'new_category}
+    @new_category = { name: 'new_category'}
     @update_category = {name: 'update_category'}
-  
-end
+  end
 
   test "should get index" do
     get :index

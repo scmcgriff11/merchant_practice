@@ -17,7 +17,7 @@ gem 'devise'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'thin'
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", "~> 4.3"
 
 
 group :development do
