@@ -15,6 +15,11 @@
   <%= @product.try(:brand).try(:name) %>
 </p>
 
+<p> 
+  <strong>Image:</strong>
+  <%= image_tag @product.image.url(:medium) %>
+</p>
+
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
@@ -30,6 +35,5 @@
   <%= @product.quantity %>
 </p>
 
-<%= image_tag @product.image.url(:medium) %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

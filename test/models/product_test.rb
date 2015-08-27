@@ -7,8 +7,18 @@ class ProductTest < ActiveSupport::TestCase
   
   test "product fields must not be empty" do 
       product = Product.new
-      assert_not product.save, "saved product with empty attributes"
+      product.save
+      assert product.errors[:name].any?, "name must be present"
+      assert product.errors[:description].any?, "description must be present"
+      assert product.errors[:category_id].any?, "category must be present"
+      assert product.errors[:brand_id].any?, "brand must be present"
+      assert product.errors[:quantity].any?, "brand must be present"
+      assert product.errors[:price].any?, "brand must be present"
+
+   assert_not product.save, "saved product with empty attributes"
+
   end
+  
   
   test "product name should be unique" do 
       product = Product.new(price: 1, description: "my description", category_id: 1, brand_id: 1, quantity: 1)

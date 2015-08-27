@@ -15,15 +15,19 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.collection_select :category_id, Category.order(:name).all, :id, :name %>
-  </div>
+  
   <div class="field">
     <%= f.label :brand_id %><br>
-    <%= f.collection_select :brand_id, Brand.order(:name).all, :id, :name %>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name %>
   </div>
-  
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
   
   <div class="field">
     <%= f.label :description %><br>

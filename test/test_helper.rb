@@ -8,6 +8,9 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   # TODO: Figure out where to put devise test helpers
+end
+
+class ActionController::TestCase
   include Devise::TestHelpers
 end
   
