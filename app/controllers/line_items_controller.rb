@@ -25,6 +25,15 @@ class LineItemsController < ApplicationController
 
   # POST /line_items
   # POST /line_items.json
+ 
+  test "should create line_item" do
+   assert_difference('LineItem.count') do
+     post :create, product_id: products(:one).id
+   end
+
+   assert_redirected_to cart_path(assigns(:line_item).cart)
+ end
+  
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.line_items.build(product: product, price: product.price) 
