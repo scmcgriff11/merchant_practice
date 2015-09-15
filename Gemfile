@@ -19,6 +19,7 @@ gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'thin'
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk', '> 2'
 
 group :production do 
   gem 'pg'
