@@ -194,7 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (> 2)
+  aws-sdk (~> 2)
   better_errors
   bootstrap-sass
   byebug
